@@ -1,0 +1,19 @@
+/* eslint no-console: 0 */
+
+import express from 'express';
+import { apiPort } from '../config/env';
+
+const app = express();
+
+app.get('/api', (req, res) => {
+  res.send('Hello World');
+});
+
+app.listen(apiPort, (err) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(`Api listening on port ${apiPort}`);
+  }
+})
+;
